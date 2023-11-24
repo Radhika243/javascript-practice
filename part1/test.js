@@ -28,7 +28,7 @@
 // console.log(1+9+"7");
 
 // let gameCounter = 100;
-// const assignValue = ++gameCounter;
+// const assignValue = gameCounter++;
 // console.log(gameCounter);
 // console.log(`value assigned : ${assignValue}`)
 
@@ -51,3 +51,8 @@
 // }
 
 // console.table([heros,myObj])
+
+
+const lines = ["This is Javascript","This is second line"];
+const message = lines.join('\n')
+console.log(message)

@@ -1,9 +1,9 @@
 const userEmail = "h@gmail.com";
-// if(!userEmail){
-//     console.log('hi')
-// }else{
-//     console.log(`hello`) // output : hello (if ! is used in the if case then else case will execute)
-// }
+if(userEmail){
+    console.log('hi')
+}else{
+    console.log(`hello`) // output : hello (if ! is used in the if case then else case will execute)
+}
 //console.log(userEmail.length)
 // if(userEmail.length){
 //     console.log(`email is empty`)
