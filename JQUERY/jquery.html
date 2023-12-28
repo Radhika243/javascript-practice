@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQUERY Practice</title>
+    <style>
+      #flip #panel {
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+      }
+      #panel {
+        padding: 75px;
+      }
+
+      #panel1,
+      #flip1 {
+        padding: 5px;
+        font-size: 18px;
+        text-align: center;
+        background-color: #555;
+        color: white;
+        border: solid 1px #666;
+        border-radius: 3px;
+      }
+
+      #panel1 {
+        padding: 50px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This is body1</p>
+    <p>This is body2</p>
+    <p>This is body3</p>
+    <p>This is body4</p>
+    <div>This is div</div>
+    <span id="p1">We are double clicking</span>
+    <br />
+    <span id="mouse">Mouse Enter Event</span>
+
+    <p>Demonstrate fadeIn() with different parameters.</p>
+
+    <button>Click to fade in boxes</button><br /><br />
+
+    <button id="fade1">Click to fade out boxes</button><br /><br />
+    <button id="fade2">Click to fade in/out boxes</button><br /><br />
+    <button id="fade3">Click tofade boxes</button><br /><br />
+
+    <!-- <div id="flip">Click to slide up panel</div>
+    <div id="panel">Hello world!</div> -->
+
+    <div
+      id="div1"
+      style="width: 80px; height: 80px; display: none; background-color: red"
+    ></div>
+    <br />
+    <div
+      id="div2"
+      style="width: 80px; height: 80px; display: none; background-color: green"
+    ></div>
+    <br />
+    <div
+      id="div3"
+      style="width: 80px; height: 80px; display: none; background-color: blue"
+    ></div>
+
+    <h1>Welcome to My Web Page</h1>
+
+    <p>If you click on the "Hide" button, I will disappear.</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+
+    <!-- <table border="1">
+      <tr>
+        <th>Company</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Berglunds snabbköp</td>
+        <td>Sweden</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Austria</td>
+      </tr>
+      <tr>
+        <td>Island Trading</td>
+        <td>UK</td>
+      </tr>
+    </table> -->
+
+    <button id="stopBtn">STOP Sliding</button>
+
+    <div id="fade1">Click to slide down panel</div>
+    <div id="panel1">Hello World</div>
+    <br /><br /><br /><br />
+
+    <div
+      id="animation"
+      style="
+        background-color: blue;
+        position: relative;
+        width: 100px;
+        height: 100px;
+      "
+    ></div>
+    <br />
+    <div
+      id="animation1"
+      style="
+        background-color: blue;
+        position: relative;
+        width: 100px;
+        height: 100px;
+      "
+    ></div>
+    <br /><br /><br />
+    <div
+      id="word"
+      style="
+        background: #98bf21;
+        height: 100px;
+        width: 200px;
+        position: absolute;
+      "
+    >
+      HELLO
+    </div>
+    <br /><br /><br />
+  </body>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="jquery.js"></script>
+  <script>
+    // console.log($)
+    // $('selector').action()  --- syntax
+    $(function () {
+      //-->document.ready --> gives us the details whether the document is completely ready or not
+      $("p").click(function () {
+        console.log(`p clicked`);
+        $(this).hide();
+      });
+      $("tr:even").css("backgroundColor", "pink");
+      $("tr:odd").css("backgroundColor", "yellow");
+
+      $("#p1").dblclick(function () {
+        console.log(`dbl clicked`);
+        $("#p1").hide();
+      });
+
+      $("#mouse").mouseenter(function () {
+        console.log(`mouse event`);
+      });
+      //       $("#p1").mouseleave(function(){
+      //             alert("Bye! You now leave p1!");
+      //   });
+      //   $("div").on({
+      //     click: function () {
+      //       console.log(`div clicked`);
+      //       $("this").css("backgroundColor", "blue");
+      //     },
+      //     dblclick: function () {
+      //       console.log(`div double clicked`);
+      //       $("this").css("fontSize", "35px");
+      //     },
+      //     mouseenter: function () {
+      //       console.log(`div mouse enter `);
+      //       $("this").hide();
+      //     },
+      //     mouseleave: function () {
+      //       console.log(`mouse leave div`);
+      //       $("this").css("color", "red");
+      //     },
+      //   });
+      $("#hide").click(function () {
+        $("p").hide(5000);
+      });
+
+      $("#show").click(function () {
+        $("p").show(6000);
+      });
+
+      $("#toggle").click(function () {
+        $("p").toggle(2000);
+      });
+
+      $("button").click(function () {
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(2000);
+      });
+
+      $("#fade1").click(function () {
+        $("#div1").fadeOut();
+        $("#div2").fadeOut("slow");
+        $("#div3").fadeOut(2000);
+      });
+
+      $("#fade2").click(function () {
+        $("#div1").fadeToggle();
+        $("#div2").fadeToggle("slow");
+        $("#div3").fadeToggle(2000);
+      });
+
+      $("#fade3").click(function () {
+        //speed and opacity and callback are parameters , but first 2 are required parameters
+        $("#div1").fadeTo("slow", 0.15);
+        $("#div2").fadeTo("slow", 0.4);
+        $("#div3").fadeTo("slow", 0.7);
+      });
+
+      //   $("#flip").click(function () {
+      //     $("#panel").slideUp("slow");
+      //   });
+      //   $("#flip").click(function () {
+      //     $("#panel").slideToggle("slow");
+      //   });
+
+      $("#animation").animate({ left: "250px" }, "slow", function () {
+        console.log(`Animation started`);
+      });
+
+      $("div").click(function () {
+        $("#animation1").animate(
+          {
+            left: "200px",
+            opacity: "0.9",
+            height: "toggle", //important property
+            width: "250px",
+            color: "red",
+          },
+          3000,
+          function () {
+            console.log(`animation 11 started`);
+          }
+        );
+      });
+
+      $("div").click(function () {
+        $("#word").animate(
+          {
+            left: "300px",
+            fontSize: "3em",
+            textAlign: "center",
+            alignItems: "center",
+            justifyContent: "center",
+          },
+          4000,
+          function () {
+            console.log(`word is started animating`);
+          }
+        );
+      });
+      //   $("#flip1").click(function () {
+      //     console.log(`flip1 button`);
+      //     $("#panel1").slideDown(1000);
+      //   });
+      //   $("#stop1").click(function () {
+      //     console.log(`stop1 button`);
+      //     $("#panel1").stop();
+      //   });
+      $("#flip1").click(function () {
+        $("#panel1").slideDown(5000);
+      });
+      $("#stop1").click(function () {
+        $("#panel1").stop();
+      });
+
+      //       Three simple, but useful, jQuery methods for DOM manipulation are:
+
+      // text() - Sets or returns the text content of selected elements
+      // html() - Sets or returns the content of selected elements (including HTML markup)
+      // val() - Sets or returns the value of form fields
+    });
+  </script>
+</html>

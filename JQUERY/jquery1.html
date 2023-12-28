@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQUERY HTML</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // console.log(`inside doc`);
+        // $("#btn1").click(function () {
+        //   console.log(`btn1 click`);
+        //   alert("Text : " + $("#test").text());
+        // });
+        // $("#btn2").click(function () {
+        //   console.log(`btn2 click`);
+        //   alert("HTML : " + $("#test").html());
+        // });
+
+        // $("#btn3").click(function () {
+        //   console.log(`btn3 click`);
+        //   alert("Input : " + $("#num").val());
+        // });
+
+        // $("#link1").click(function () {
+        //   console.log(`href click`);
+        //   alert("Href link : " + $("#w3c").attr("href"));
+        // });
+
+        //setting content with JQUERY
+        // $('#setbtn1').click(function(){
+        //     console.log(`set text`);
+        //     $('settext').text("Hi good morning");
+        // });
+
+        // $('#setbtn2').click(function(){
+        //     console.log(`set html`);
+        //     $('sethtml').html("Hi <b>good</b> morning");
+        // });
+
+        // $('#setbtn3').click(function(){
+        //     console.log(`set value`);
+        //     $('setval').val("Hi");
+        // });
+
+        $("#btn1").click(function () {
+          $("#test1").text("Hello world!");
+        });
+        $("#btn2").click(function () {
+          $("#test2").html("<b>Hello world!</b>");
+        });
+        $("#btn3").click(function () {
+          $("#test3").val("Dolly Duck");
+        });
+
+        $("p").append("Some appended text.");
+
+        $("p").prepend("Some prepended text.");
+
+        $("img").after("Some text after");
+
+        $("img").before("Some text before");
+
+        function appendText() {
+          var txt1 = "<p>Text1.</p>"; // Create text with HTML
+          var txt2 = $("<p></p>").text("Text2."); // Create text with jQuery
+          var txt3 = document.createElement("p");
+          txt3.innerHTML = "Text3."; // Create text with DOM
+          $("body").append(txt1, txt2, txt3); // Append new elements
+        }
+
+        $(document).ready(function () {
+          $("#btn1").click(function () {
+            $("img").before("<b>Before</b>");
+          });
+
+          $("#btn2").click(function () {
+            $("img").after("<i>After</i>");
+          });
+        });
+
+        // $(document).ready(function () {
+        //   $("button").click(function () {
+        //     $("#div1").empty();     //removes only child elements not complete element, it can also take class or id as parameter
+        //   });
+        // });
+
+        // $(document).ready(function () {
+        //   $("button").click(function () {
+        //     $("#div1").remove();  // removes all parent and child elements,it can also take class or id as parameter
+        //   });
+        // });
+      });
+    </script>
+  </head>
+  <body>
+    <p id="test">This is a <b>bold</b> text</p>
+
+    <!-- <button id="btn1">Show Text</button>
+    <button id="btn2">Show HTML</button>
+
+    <p>Name : <input type="text" id="num" /></p>
+    <button id="btn3">Show Value</button>
+
+    <p><a href="https://www.w3schools.com/" id="w3c">w3schools Link</a></p>
+    <button id="link1">Show Href Value</button> -->
+
+    <p id="test1">This is a paragraph.</p>
+    <p id="test2">This is another paragraph.</p>
+
+    <p>Input field: <input type="text" id="test3" value="Mickey Mouse" /></p>
+
+    <button id="btn1">Set Text</button>
+    <button id="btn2">Set HTML</button>
+    <button id="btn3">Set Value</button>
+
+    <img
+      src="/images/w3jquery.gif"
+      alt="jQuery"
+      width="100"
+      height="140"
+    /><br /><br />
+
+    <button id="btn1">Insert before</button>
+    <button id="btn2">Insert after</button>
+
+    <!-- remove() - Removes the selected element (and its child elements)
+        empty() - Removes the child elements from the selected element -->
+  </body>
+</html>

@@ -596,17 +596,70 @@ var student = {
 
 // JohnDoe.12#4@gmail.com
 
-let emailRegex = /^([A-Za-z0-9!#$%&'*+-/=? ^_`{|}~])+[\.][A-Za-z0-9!#$%&'*+-/=? ^_`{|}~]+@[a-z]+\.(com|in)$/;
+// let emailRegex = /^([A-Za-z0-9!#$%&'*+-/=? ^_`{|}~])+[\.][A-Za-z0-9!#$%&'*+-/=? ^_`{|}~]+@[a-z]+\.(com|in)$/;
 
 
-function EmailValidation(email,pattern){
-    //pattern = /^([A-Za-z0-9!#$%&'*+-/=? ^_`{|}~])+[\.][A-Za-z0-9!#$%&'*+-/=? ^_`{|}~]+@[a-z]+\.(com|in)$/;
-    if(email.match(pattern)){
-        console.log("pattern matched")
-    }else{
-        console.log("pattern didn't match")
-    }
-}
-// var email = "JohnDoe..12#4@gmail.com";
-var pattern =  /^(([A-Za-z0-9!#$%&'*+-/=?^_`{|}~]))+@[a-z]+\.(com|in)$/;
-EmailValidation("JohnDoe..12#4@gmail.in",pattern) // need to check for .. validations
+// function EmailValidation(email,pattern){
+//     //pattern = /^([A-Za-z0-9!#$%&'*+-/=? ^_`{|}~])+[\.][A-Za-z0-9!#$%&'*+-/=? ^_`{|}~]+@[a-z]+\.(com|in)$/;
+//     if(email.match(pattern)){
+//         console.log("pattern matched")
+//     }else{
+//         console.log("pattern didn't match")
+//     }
+// }
+// // var email = "JohnDoe..12#4@gmail.com";
+// var pattern =  /^(([A-Za-z0-9!#$%&'*+-/=?^_`{|}~]))+@[a-z]+\.(com|in)$/;
+// EmailValidation("JohnDoe..12#4@gmail.in",pattern) // need to check for .. validations
+
+
+// let myArray = ["Android", "iOS", "Windows"];
+
+// console.log(myArray.push("Linux"));
+
+// console.log(myArray);
+
+// let myArray = ["IOS","OP","Windows","Android", "iOS", "Windows", "Linux"];
+
+// let result = myArray.findIndex(element => element.length > 5); //returns the first element which satisfies the condition
+
+// console.log(result); //Android
+
+
+// let myArr = [];
+// for (i = 0; i < 3; i++) {
+//     myArr.push(function () {
+//         console.log(i);
+//     })
+// }
+// for (j = 0; j < 3; j++) {
+//     myArr[j]();    // 3 3 3
+// }
+
+
+// var myPromise = new Promise(function (resolve, reject) {
+// 	setTimeout(function () {
+// 		resolve("success");
+// 	}, 2000);
+// });
+// myPromise.then(
+// 	function (data) {
+// 		console.log(data + " received in 2 seconds");
+// 	},
+// 	function (error) {
+// 		console.log(error);
+// 	}
+// );
+
+
+doSomething().then(function (result) {
+	return doSomethingElse(result);
+})
+	.then(function (newResult) {
+		return doThirdThing(newResult);
+	})
+	.then(function (finalResult) {
+		console.log("Print the final result " + finalResult)
+	})
+	.catch(failureCallBack);
+
+ 

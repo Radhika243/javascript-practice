@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM API for HTML modification</title>
+</head>
+<body style="background-color:lightblue;text-align:center">
+    <h1 id="hdr1">Here's your ice cream</h1>
+    <img id="img1" src="asset/full_cone_ready.jpeg" alt="Ice cream is not ready">
+    <p id="p1" onclick="eat()">Click here to eat</p>
+    <script>
+        //Write the code here
+        const myImage = document.getElementById('img1');
+        const p = document.getElementById('p1');
+
+        function eat(){
+            p.addEventListener('click',function(){
+           myImage.setAttribute('src','asset/full_cone_ready.jpeg')
+        })
+        }
+    </script>
+</body>
+</html>

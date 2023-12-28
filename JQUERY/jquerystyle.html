@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQUERY CSS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      .important {
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      .blue {
+        color: blue;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('button').click(function(){
+             $("h1,h2,p").addClass("blue");
+            $("div").addClass("important");
+            $("#anocl").addClass("important blue");
+            $("#anocl").removeClass("blue");
+            $("button").toggleClass("blue");
+        });
+      });
+    </script>
+  </head>
+  <!-- src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    var txt = "";
+    txt += "Document width/height: " + $(document).width();
+    txt += "x" + $(document).height() + "\n";
+    txt += "Window width/height: " + $(window).width();
+    txt += "x" + $(window).height();
+    alert(txt);
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Display dimensions of document and window</button> -->
+  <body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <div>This is some important text!</div>
+    <div id="anocl">This is some important imports text!</div>
+    <br />
+
+    <button>Add classes to elements</button>
+    <button>Add btn to elements</button>
+  </body>
+</html>
+<!-- jQuery has several methods for CSS manipulation. We will look at the following methods:
+
+addClass() - Adds one or more classes to the selected elements
+removeClass() - Removes one or more classes from the selected elements
+toggleClass() - Toggles between adding/removing classes from the selected elements
+css() - Sets or returns the style attribute -->

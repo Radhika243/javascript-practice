@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+</head>
+<body>
+    <!-- The page must contain two text type input fields to accept operands and radio buttons to input an operator. -->
+    <script src="./Calc.js"></script>
+    <label>Enter num1:</label>
+    <input type="text"/><br/><br/>
+    <label>Enter num2:</label>
+    <input type="text"/><br/><br/>
+    <div>
+        <input type="radio" id="plus" name="op" value="plus" checked/>
+        <label for="plus"> + </label>
+        <input type="radio" id="sub" name="op" value="sub"/>
+        <label for="sub"> - </label>
+        <input type="radio" id="mul" name="op" value="mul"/>
+        <label for="mul"> * </label>
+        <input type="radio" id="div" name="op" value="div"/>
+        <label for="div"> / </label>
+    </div><br/><br/>
+    <button type="submit" onclick="Operands(num1,num2)" style="display: flex; align-items: center;justify-content: center;transform: translate(50%, 50%);">Calculate</button>
+</body>
+</html>
